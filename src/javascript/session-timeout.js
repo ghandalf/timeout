@@ -1,8 +1,8 @@
 /*
- * bootstrap-session-timeout
- * www.orangehilldev.com
- *
- * Copyright (c) 2014 Vedran Opacic
+ * This script is base on  bootstrap-session-timeout
+ * done by www.orangehilldev.com
+ * We had to do some changes to have what we expected.
+ * 
  * Licensed under the MIT license.
  */
 
@@ -53,7 +53,7 @@
             // If opt.countdownMessage is defined add a coundown timer message to the modal dialog
             var countdownMessage = opt.countdownMessage ?
                 '<p>' + opt.countdownMessage.replace(/{timer}/g, '<span class="countdown-holder"></span>') + '</p>' : '';
-            console.log("INDEX::: " + countdownMessage);
+            
             var coundownBarHtml = opt.countdownBar ?
                 '<div class="progress"> \
                   <div class="progress-bar progress-bar-striped countdown-bar active" role="progressbar" style="min-width: 15px; width: 100%;"> \
@@ -62,15 +62,14 @@
                 </div>' : '';
 
             // Create timeout warning dialog
-
             $('body').append('<div id="session-timeout-dialog" class="row" style="position: absolute; top: 0; display:none;"> \
-            <div class="col-xs-12"> \
-                <p>' + opt.message + '</p> \
-                ' + countdownMessage + ' ' + coundownBarHtml + ' \
-                <span id="final-countdown"></span> \
-                <a id="clickme" role="button" href="#">Extend</a> \
-            </div> \
-        </div>');
+                <div class="col-xs-12"> \
+                    <p>' + opt.message + '</p> \
+                    ' + countdownMessage + ' ' + coundownBarHtml + ' \
+                    <span id="final-countdown"></span> \
+                    <a id="clickme" role="button" href="#">Extend</a> \
+                </div> \
+            </div>');
 
             // "Logout" button click
             $('#session-timeout-dialog-logout').on('click', function() {
